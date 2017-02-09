@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		// handle respawn
 		if (other.tag == "Book") {
+			print("player collided with book");
 			addBook (other.name);
 //			numBooks++;
 //			numBooksCollected.text = "Books: " + numBooks + "/" + maxBooks;
@@ -198,6 +199,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void addBook(string bName){
+		print("adding bookname to list");
 		bookNames.Add (bName);
 	}
 

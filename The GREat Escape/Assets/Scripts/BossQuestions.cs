@@ -16,12 +16,14 @@ public class BossQuestions : MonoBehaviour {
 	public char delim, delim2;
 	public string wrdTmp, defTmp, currQuestion;
 	public static SortedDictionary<string,string> questionsAnswers; // map of questions and answers. Q is key, A is value
-	public List<string> answerOptions;
+	
+	public List<string> answerOptions; //holds words to test on
 	public List<string> keyList;
 	public static List<string> currAnswers; //Array used to make sure answers aren't repeated
 	public string[] multiple_choice; //Array of multiple choice options
 	public static int correct_index;
 	public static List<string> questionsUsed;
+	
 	// Use this for initialization
 	void Start () {
 		questionsAnswers = new SortedDictionary<string,string> ();
@@ -114,7 +116,7 @@ public class BossQuestions : MonoBehaviour {
 		while (isQuesUsed (randomKey)) {
 		  randomKey = keyList[Random.Range(0, keyList.Count-1)];
 		}
-		assignAnswers (questionsAnswers [randomKey]);
+		assignAnswers (questionsAnswers [randomKey]);  
 		return randomKey;
 
 	}

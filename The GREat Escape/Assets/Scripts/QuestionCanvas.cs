@@ -22,13 +22,13 @@ public class QuestionCanvas : MonoBehaviour {
 	}
 
 	public void enableQuestionCanvas(){
-		print ("enabled");
+		print ("QuestionCanvas enabled");
 		//gameObject.GetComponent<CanvasGroup>().alpha=1;
 		canvas.alpha = 1;
 	}
 
 	public void disableQuestionCanvas(){
-		print ("disabled");
+		print ("QuestionCanvas disabled");
 		//gameObject.GetComponent<CanvasGroup> ().alpha = 0;
 		canvas.alpha=0;
 

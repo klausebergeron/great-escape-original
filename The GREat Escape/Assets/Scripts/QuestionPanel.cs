@@ -11,11 +11,13 @@ public class QuestionPanel : MonoBehaviour {
 	}
 	
 	public void enable () {
+		print("QuestionPanel enabled");
 		this.GetComponent<SpriteRenderer>().enabled = true;
 
 	}
 
 	public void disable (){
+		print("QuestionPanel disabled");
 		this.GetComponent<SpriteRenderer> ().enabled = false;
 	}
 }
