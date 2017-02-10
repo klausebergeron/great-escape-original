@@ -40,18 +40,18 @@ public class BookScript : MonoBehaviour {
 		levelCount = 1;
 
 		words = new string[] {
-			"'&': the address-of operator.\n\ngiven int n, '&n' will return the address in memory that contains n.",
+			"'&': the address-of operator.\n\nGiven int n, '&n' will return the address in memory that contains n.",
 			"'*(1)': the pointer.\n\n given int *intPtr, the variable intPtr has the ability to 'point' to an int variable in memory.",
-			"*(2)': the dereference operator.\n\ngiven: int *intPtr, int newInt = *intPtr, intPtr is dereferenced to return the value of the int intPtr is pointing to.",
-			"'->': the arrow operator.\n\nOne example: If a is a pointer, then a->b means member b of object pointed to by a. Synonymous to (*a).b.",
+			"*(2)': the dereference operator.\n\ngiven int *intPtr, int newInt = *intPtr, intPtr is dereferenced to return the value of the int intPtr is pointing to.",
+			"'->': the arrow operator.\n\n For example, if a is a pointer, then a->b means member b of object pointed to by a. Synonymous to (*a).b.",
 			"‘~className’: Destructor used when an object is destroyed.\n\nDestructors can be used to deallocate memory when an object is destroyed.",
 			"new: this command allocates memory on the fly.\n\nThe new command allocates memory dynamically, on the heap, while the program is running.",
-			"Encapsulation: data hiding, providing information (interface) the user needs and hiding the code (implementation)\n\nEncapsulation is a principle of object-oriented programming.",
+			"Encapsulation: data hiding.\n\nEncapsulation is a principle of object-oriented programming, providing information (interface) the user needs and hiding the code (implementation).",
 			"Private: variables with this access modifier can be used only by member functions.\n\nBy default class members are private.",
-			"Vector: contiguous storage locations for their elements (like arrays) but, they can change in size.\n\n Even if a vector is full, you can add another element by vector.add(element).",
-			"Overloading: when functions with the same call name differ by their parameters\n\n It is not enough to change just the return types when overloading a function.",
+			"Vector: contiguous storage locations for their elements (like arrays) but, they can change in size.\n\nEven if a vector is full, you can add another element by vector.add(element).",
+			"Overloading: when functions with the same call name differ by their parameters. \n\n It is not enough to change just the return types when overloading a function.",
 			"this: current object.\n\nthis is automatically set to the current object.",
-			"Template: a generic type variable or class.\n\nTemplates make classes more flexible since they don’t make variables/classes type specific.",
+			"Template: a generic type variable or class.\n\nTemplates make classes more flexible since they do not make variables/classes type specific.",
 			"friend: lets a class specify ordinary functions that are allowed to access its private data.\n\nNon-member function can't access private data unless the class allows it.",
 			"private: used to mark that a member cannot be used outside the class.\n\nThe keyword private is an access modifier.",
 			"protected: allows access by derived classes.\n\nThe keyword protected is an access modifier."
