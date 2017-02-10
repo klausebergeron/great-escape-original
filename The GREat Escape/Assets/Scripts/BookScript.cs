@@ -40,8 +40,10 @@ public class BookScript : MonoBehaviour {
 		levelCount = 1;
 
 		words = new string[] {
-			"*: the dereference operator. \n \n *int_ptr.",
-			"&: the address-of operator. \n\n Instead of being truthful on his campaign for sheriff, he resorted to chicanery.",
+			"'&': the address-of operator. \n\n given int n, '&n' will return the adress in memory that contains n",
+			"'*(1)': the pointer. \n\n given int *intPtr, the variable intPtr has the ability to 'point' to an int variable in memory",
+			"*(2)': the dereference operator. \n\n given: int *intPtr, int newInt = *intPtr, intPtr is dereferenced to return the value of the int intPtr is pointing to.",
+			"'->': the arrow operator. \n\n \n One example: If a is a pointer, then a->b means member b of object pointed to by a. Synonymous to (*a).b",
 			"Disseminate: Spread or disperse. \n\n Cover your mouth while sneezing so that you do not disseminate bacteria.",
 			"Garrulous: Full of trivial conversation. \n\n Due to Jake's garrulous nature, asking him to keep a secret is impossible.",
 			"Laud: Praise, glorify, or honor. \n\n The purpose of the awards is to laud students for their academic excellence.",
@@ -53,20 +55,6 @@ public class BookScript : MonoBehaviour {
 			"Aberrant: Markedly different from an accepted norm.\n\n Sarah's aberrant manners led to her being kicked out of the movie theater.",
 			"Abeyance: Temporary cessation or suspension.\n\n Jane's cancer has returned after being in abeyance for nearly two years.",
 			"Dissonance: A lack of agreement, may refer to sounds.\n\n There is a great deal of dissonance between what a liar says and does.",
-			"Goad: Prove or annoy so as to stimulate some action or reaction.\n\n Jordan tried to goad his daughter into doing her chores by freezing her allowance payments.",
-			"Abscond: Run away, often taking something or somebody along.\n\n He made plans to abscond with the stolen money.",
-			"Distend: Cause to expand as if by iternal pressure.\n\n The excess food consumption made her stomach distend from bloat.",
-			"Gouge: An impression in a surface, as made by a blow.\n\n The channel had been gouged out by the ebbing water.",
-			"Levee: An embankment built to prevent a river from overflowing.\n\n Vulnerable coastal cities may build levees and seawalls.",
-			"Coda: The closing section of a musical composition.\n\n So, appealingly, does the ever-adaptable Beck, who sings on the albums coda, Tiny Cities.",
-			"Abstemious: Marked by temperance in indulgence.\n\n Melania was abstemious and more wholesome than the other girls, he said, and they started dating.",
-			"Commensurate: Corresponding in size or degree or extent.\n\n We lived on expenses, just as successful businessmen do today, but without a commensurate salary.",
-			"Distill: Undergo condensation.\n\n Makers of saline rinses typically suggest using distilled water for safety, rather than tap.",
-			"Grandiloquent: Lofty in style.\n\n But while the musical setting is grandiloquent, Cookes tale is down-to-earth.",
-			"Levity: A manner lacking seriousness.\n\n They both laughed, which made Mark wonder where all the sudden levity had come from.",
-			"Admonish: Scold or reprimand, take to task.\n\n But the judge called some of Kyros conduct 'highly unprofessional,' and admonished him to follow the rules.",
-			"Compendium: A publication containing a variety of works.\n\n There are 73 films on this year’s Black List, the annual compendium of popular unproduced screenplays.",
-			"Gregarious: Temperamentally seeking and enjoying the company of others.\n\n He has great relationships with his friends due to his gregarious personality.",
 			"Diverge: Move or draw apart.\n\n Now this is where the stories offered by the boy and the State begin to diverge slightly."
 		};
 
