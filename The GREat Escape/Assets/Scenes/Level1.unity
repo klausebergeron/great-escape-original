@@ -5520,7 +5520,7 @@ MonoBehaviour:
   moveSpeed: 9
   jumpSpeed: 12
   numBooks: 0
-  maxBooks: 5
+  maxBooks: 6
   numBooksCollected: {fileID: 277699520}
   wordDisplay: {fileID: 116111315}
   respawnPosition: {x: 0, y: 0, z: 0}

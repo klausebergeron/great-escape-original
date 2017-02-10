@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BookScript : MonoBehaviour {
 	
-	const int NUM_REVIEW_WORDS = 4;
+	const int NUM_REVIEW_WORDS = 5;
 
 	public static BookScript bookControl;
 	public static int levelCount; // which level the player is on
@@ -74,8 +74,10 @@ public class BookScript : MonoBehaviour {
 	//increment book count and change the text
 	public void updateBookTracker(){
 		numBooks++;
+		print("numBooks" + numBooks);
         numBooksCollected = GameObject.Find("BookScore").GetComponent<Text>();
-        numBooksCollected.text = "Books: " + numBooks + "/" + maxBooks;
+        print("maxBooks" + maxBooks);
+        numBooksCollected.text = "Books: " + numBooks + "/5"; //+ maxBooks;
 	}
 
 
@@ -126,7 +128,7 @@ public class BookScript : MonoBehaviour {
 	}
 
 	public bool numBooksCheck(){
-		return ( (numBooks % 4) == 0 ) ? true : false;
+		return ( (numBooks % 5) == 0 ) ? true : false;
 	}
 
 
