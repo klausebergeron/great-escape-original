@@ -40,22 +40,21 @@ public class BookScript : MonoBehaviour {
 		levelCount = 1;
 
 		words = new string[] {
-			"'&': the address-of operator. \n\n given int n, '&n' will return the adress in memory that contains n",
-			"'*(1)': the pointer. \n\n given int *intPtr, the variable intPtr has the ability to 'point' to an int variable in memory",
-			"*(2)': the dereference operator. \n\n given: int *intPtr, int newInt = *intPtr, intPtr is dereferenced to return the value of the int intPtr is pointing to.",
-			"'->': the arrow operator. \n\n \n One example: If a is a pointer, then a->b means member b of object pointed to by a. Synonymous to (*a).b",
-			"Disseminate: Spread or disperse. \n\n Cover your mouth while sneezing so that you do not disseminate bacteria.",
-			"Garrulous: Full of trivial conversation. \n\n Due to Jake's garrulous nature, asking him to keep a secret is impossible.",
-			"Laud: Praise, glorify, or honor. \n\n The purpose of the awards is to laud students for their academic excellence.",
-			"Cogent: Powerfully persuasive. \n\n The angry husband hired a detective to find cogent proof of his wife's extramarital affair.",
-			"Coagulate: Change from a liquid to a thickened or solid state. \n\n Over time the milk will coagulate and become a bottle of disgusting clots.",
-			"Lethargic: Deficient in alertness or activity. \n\n You can find my lethargic cat curled up asleep in the warmest spot she can find.",
-			"Gainsay: Take contradict or deny. \n\n It would be unwise to gainsay your doctor's suggestions and stop taking your prescription medication. ",
-			"Latent: Potentially existing but not presently evident or realized.\n\n The detective asked the lab technician to search the room for latent fingerprints.",
-			"Aberrant: Markedly different from an accepted norm.\n\n Sarah's aberrant manners led to her being kicked out of the movie theater.",
-			"Abeyance: Temporary cessation or suspension.\n\n Jane's cancer has returned after being in abeyance for nearly two years.",
-			"Dissonance: A lack of agreement, may refer to sounds.\n\n There is a great deal of dissonance between what a liar says and does.",
-			"Diverge: Move or draw apart.\n\n Now this is where the stories offered by the boy and the State begin to diverge slightly."
+			"'&': the address-of operator.\n\ngiven int n, '&n' will return the address in memory that contains n.",
+			"'*(1)': the pointer.\n\n given int *intPtr, the variable intPtr has the ability to 'point' to an int variable in memory.",
+			"*(2)': the dereference operator.\n\ngiven: int *intPtr, int newInt = *intPtr, intPtr is dereferenced to return the value of the int intPtr is pointing to.",
+			"'->': the arrow operator.\n\nOne example: If a is a pointer, then a->b means member b of object pointed to by a. Synonymous to (*a).b.",
+			"‘~className’: Destructor used when an object is destroyed.\n\nDestructors can be used to deallocate memory when an object is destroyed.",
+			"new: this command allocates memory on the fly.\n\nThe new command allocates memory dynamically, on the heap, while the program is running.",
+			"Encapsulation: data hiding, providing information (interface) the user needs and hiding the code (implementation)\n\nEncapsulation is a principle of object-oriented programming.",
+			"Private: variables with this access modifier can be used only by member functions.\n\nBy default class members are private.",
+			"Vector: contiguous storage locations for their elements (like arrays) but, they can change in size.\n\n Even if a vector is full, you can add another element by vector.add(element).",
+			"Overloading: when functions with the same call name differ by their parameters\n\n It is not enough to change just the return types when overloading a function.",
+			"this: current object.\n\nthis is automatically set to the current object.",
+			"Template: a generic type variable or class.\n\nTemplates make classes more flexible since they don’t make variables/classes type specific.",
+			"friend: lets a class specify ordinary functions that are allowed to access its private data.\n\nNon-member function can't access private data unless the class allows it.",
+			"private: used to mark that a member cannot be used outside the class.\n\nThe keyword private is an access modifier.",
+			"protected: allows access by derived classes.\n\nThe keyword protected is an access modifier."
 		};
 
 		reviewIndices = new List<int>();
