@@ -18,7 +18,7 @@ public class BossQuestions : MonoBehaviour {
 
 
 	//public string wrdTmp, defTmp, currQuestion;
-	public string questionTemp, choice1, choice2, choice3, choice4, answer;
+	public string questionTemp, choice1, choice2, choice3, choice4, answer, currQuestion;
 	public static SortedDictionary<string,string> questionsAnswers; // map of questions and answers. Q is key, A is value
 	
 	public List<string> answerOptions; //holds words to test on
@@ -91,15 +91,15 @@ public class BossQuestions : MonoBehaviour {
 				print("in set words for loop");
 				//set review word in QA Map
 				parseStr (str);
-				questionsAnswers [defTmp] = wrdTmp;
+				questionsAnswers [answer] = questionTemp;
 				continue; // go to next iteration
 			}
 
 			//only add words that weren't in review as non-correct answer options
 			print("outside of set words for loop");
 			parseStr (str);
-			answerOptions.Add (wrdTmp);
-			print ("IN PARSEWORDS " + defTmp);
+			answerOptions.Add (questionTemp);
+			print ("IN PARSEWORDS " + answer);
 
 		}
 	}
@@ -124,14 +124,16 @@ public class BossQuestions : MonoBehaviour {
 	
 	//version of parseStr for 4 mult choice 
 	public void parseStr(string toParse){
+		 print("in parseStr");
  	     int len = toParse.IndexOf (delim1);
  		 int len2 = toParse.IndexOf (delim2);
-		 int len3 = toParse.indexOf(delim3);
-		 int len4 = toParse.indexOf(delim4);
-		 int len5 = toParse.indexOf(delim5);
+		 int len3 = toParse.IndexOf(delim3);
+		 int len4 = toParse.IndexOf(delim4);
+		 int len5 = toParse.IndexOf(delim5);
 
  		 if (len > 0) {	
       	      questionTemp = toParse.Substring (0, len); // gets question up to ?
+      	      print("question is: " + questionTemp);
               choice1 = toParse.Substring(len+1, (len2 - len+1)); //gets first choice up to #
               choice2 = toParse.Substring(len2+1, (len3 - len2 +1)); // gets second choice up to $
               choice3 = toParse.Substring(len3+1, (len4 - len3 +1)); // gets second choice up to %
@@ -158,7 +160,6 @@ public class BossQuestions : MonoBehaviour {
 		}
 		assignAnswers (questionsAnswers [randomKey]);  
 		return randomKey;
-
 	}
 
 	public void assignAnswers(string correct){
