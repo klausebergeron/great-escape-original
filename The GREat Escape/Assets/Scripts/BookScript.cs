@@ -13,6 +13,7 @@ public class BookScript : MonoBehaviour {
 
 	// list of all the words
 	public string[] words;
+	public string[] facts;
 	public List<string> reviewWords;
 	
 	// indices of already picked books so they aren't reused and can be accessed for review
@@ -21,6 +22,7 @@ public class BookScript : MonoBehaviour {
 	public int numBooks;
 	public int maxBooks;
 	public Text numBooksCollected;
+	public int currentBook;
 
 	void Awake(){
 		if (bookControl == null) {
@@ -37,6 +39,7 @@ public class BookScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		currentBook = 0;
 		levelCount = 1;
 		/*
 		words = new string[] {
@@ -57,6 +60,30 @@ public class BookScript : MonoBehaviour {
 			"protected: allows access by derived classes.\n\nThe keyword protected is an access modifier."
 		};
 		*/
+
+		facts = new string[] {
+			"Fact1 ", 
+			"Fact2",
+			"Fact3", 
+			"Fact4", 
+			"Fact5", 
+			"Fact6", 
+			"Fact7", 
+			"Fact8", 
+			"Fact9", 
+			"Fact10", 
+			"Fact11", 
+			"Fact12", 
+			"Fact13", 
+			"Fact14", 
+			"Fact15", 
+			"Fact16", 
+			"Fact17", 
+			"Fact18", 
+			"Fact19", 
+			"Fact20"
+
+		};
 
 		words = new string[] {
 			"Question1 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
@@ -81,11 +108,14 @@ public class BookScript : MonoBehaviour {
 			"Question20 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1"
 
 		};
+			
 
 		reviewIndices = new List<int>();
 		reviewWords = new List<string> ();
 //		numBooksCollected.text = "Books: " + numBooks + "/" + maxBooks;
 		numBooksCollected = GameObject.Find("BookScore").GetComponent<Text>();
+
+
 	}
 	
 	// Update is called once per frame
@@ -96,6 +126,7 @@ public class BookScript : MonoBehaviour {
 	public void updateLevelCount(){
 		levelCount++;
 	}
+
 	//increment book count and change the text
 	public void updateBookTracker(){
 		numBooks++;
@@ -114,15 +145,17 @@ public class BookScript : MonoBehaviour {
 	*/
 	public string pickWord(){
 		print("in pickWord after colliding with book");
-		int randomNumber = Random.Range (0, words.Length);
-		while (isWordUsed (randomNumber)) {
-			print("that word was already used..get another");
-			randomNumber = Random.Range (0, words.Length);
+		//int randomNumber = Random.Range (0, words.Length);
+
+		while (isWordUsed (currentBook)) {
+			currentBook++;
 		}
 
-		reviewIndices.Add (randomNumber); // add index to the list so it won't be picked more than once
+		reviewIndices.Add (currentBook); // add index to the list so it won't be picked more than once
 			
-		return words [randomNumber];
+
+
+		return facts [currentBook];
 	}
 
 

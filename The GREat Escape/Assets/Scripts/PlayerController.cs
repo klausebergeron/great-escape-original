@@ -140,7 +140,10 @@ public class PlayerController : MonoBehaviour {
 
 			//currBook = other.GetComponent<BookScript> ();
 
+
 			wordDisplay.text = BookScript.bookControl.pickWord ();  //Should take word from book
+
+
 			Destroy (other.gameObject, 1);
 
 			Time.timeScale = 0.0f;
