@@ -177,7 +177,7 @@ public class BookScript : MonoBehaviour {
 
 	public void setReviewWords(){
 		foreach (int i in reviewIndices) {
-			reviewWords.Add (words [i]); // add only the words that were picked;
+			reviewWords.Add (facts [i]); // add only the words that were picked;
 		}
 		//ReviewScript.updateReviewNum();
 	}
