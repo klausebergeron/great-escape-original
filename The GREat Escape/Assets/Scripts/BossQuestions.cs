@@ -13,8 +13,12 @@ public class BossQuestions : MonoBehaviour {
 	public Text Question, Ans1, Ans2, Ans3;
 
 	public int numWords = BookScript.bookControl.words.Length;
-	public char delim, delim2;
-	public string wrdTmp, defTmp, currQuestion;
+	//public char delim, delim2;
+	public char delim1, delim2, delim3, delim4, delim5;
+
+
+	//public string wrdTmp, defTmp, currQuestion;
+	public string questionTemp, choice1, choice2, choice3, choice4, answer;
 	public static SortedDictionary<string,string> questionsAnswers; // map of questions and answers. Q is key, A is value
 	
 	public List<string> answerOptions; //holds words to test on
@@ -27,8 +31,16 @@ public class BossQuestions : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		questionsAnswers = new SortedDictionary<string,string> ();
+		/*
 		delim = ':';
 		delim2 = '.';
+		*/
+		delim1 = '?';
+		delim2 = '#';
+		delim3 = '$';
+		delim4 = '%';
+		delim5 = '!';
+
 	//	answerOptions = new List<string>[NumOptions];
 		answerOptions = new List<string> ();
 		questionsUsed = new List<string> ();
@@ -40,6 +52,7 @@ public class BossQuestions : MonoBehaviour {
 	void Update () {
 	
 	}
+
 	//checks if index is in reviewIndicies
 	public bool isInRevInd(int check){ 
 		foreach (int i in BookScript.bookControl.reviewIndices) {
@@ -59,6 +72,7 @@ public class BossQuestions : MonoBehaviour {
 		}
 		return false;
 	}
+
 
 	public bool isQuesUsed(string check){
 		foreach (string i in questionsUsed) {
@@ -90,6 +104,7 @@ public class BossQuestions : MonoBehaviour {
 		}
 	}
 
+	/*
 	// breaks word,def string into separate word and definition
 	public void parseStr(string toParse){
 		int len = toParse.IndexOf (delim);
@@ -104,6 +119,31 @@ public class BossQuestions : MonoBehaviour {
 		}
 
 	}
+	*/
+
+	
+	//version of parseStr for 4 mult choice 
+	public void parseStr(string toParse){
+ 	     int len = toParse.IndexOf (delim1);
+ 		 int len2 = toParse.IndexOf (delim2);
+		 int len3 = toParse.indexOf(delim3);
+		 int len4 = toParse.indexOf(delim4);
+		 int len5 = toParse.indexOf(delim5);
+
+ 		 if (len > 0) {	
+      	      questionTemp = toParse.Substring (0, len); // gets question up to ?
+              choice1 = toParse.Substring(len+1, (len2 - len+1)); //gets first choice up to #
+              choice2 = toParse.Substring(len2+1, (len3 - len2 +1)); // gets second choice up to $
+              choice3 = toParse.Substring(len3+1, (len4 - len3 +1)); // gets second choice up to %
+              choice4 = toParse.Substring(len4+1, (len5 - len4 +1)); // gets second choice up to !
+
+		 	  answer = toParse.Substring(len4+1, (len5-len4+1)); // gets answer
+		} 
+	}
+
+	
+
+
 	public string pickQuestion(){
 		//list of all keys in questionAnswers
 		print("inside pickQuestion");

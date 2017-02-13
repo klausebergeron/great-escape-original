@@ -38,7 +38,7 @@ public class BookScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		levelCount = 1;
-
+		/*
 		words = new string[] {
 			"'&': the address-of operator.\n\nGiven int n, '&n' will return the address in memory that contains n.",
 			"'*(1)': the pointer.\n\n given int *intPtr, the variable intPtr has the ability to 'point' to an int variable in memory.",
@@ -55,6 +55,31 @@ public class BookScript : MonoBehaviour {
 			"friend: lets a class specify ordinary functions that are allowed to access its private data.\n\nNon-member function can't access private data unless the class allows it.",
 			"private: used to mark that a member cannot be used outside the class.\n\nThe keyword private is an access modifier.",
 			"protected: allows access by derived classes.\n\nThe keyword protected is an access modifier."
+		};
+		*/
+
+		words = new string[] {
+			"Question1 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question2 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 3",
+			"Question3 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 3", 
+			"Question4 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question5 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question6 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question7 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question8 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question9 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question10 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question11 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question12 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question13 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question14 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question15 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question16 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question17 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question18 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question19 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question20 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1"
+
 		};
 
 		reviewIndices = new List<int>();
