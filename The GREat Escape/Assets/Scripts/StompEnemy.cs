@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -40,20 +40,22 @@ public class StompEnemy : MonoBehaviour {
 
 	void MC(){
 		//assign word choices to button texts
-		choice1.GetComponentInChildren<Text>().text = boss.multiple_choice [0];
-		choice2.GetComponentInChildren<Text>().text = boss.multiple_choice [1];
-		choice3.GetComponentInChildren<Text>().text = boss.multiple_choice [2];
-		choice4.GetComponentInChildren<Text>().text = boss.multiple_choice [3];
+		choice1.GetComponentInChildren<Text>().text = boss.choice1;//boss.multiple_choice [0];
+		choice2.GetComponentInChildren<Text>().text = boss.choice2;//boss.multiple_choice [1];
+		choice3.GetComponentInChildren<Text>().text = boss.choice3;//boss.multiple_choice [2];
+		choice4.GetComponentInChildren<Text>().text = boss.choice4;//boss.multiple_choice [3];
 
 	}
 
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Enemy") {
+			print("you've destroyed an enemy");
 			Destroy (other.gameObject);
 		}
 
 		if (other.tag == "Boss") {
+			boss.pickQuestion();
 			qCanvas.enableQuestionCanvas ();
 			panel.enable ();
 
@@ -64,7 +66,8 @@ public class StompEnemy : MonoBehaviour {
 
 			Time.timeScale = 0.0f;
 
-			ques = boss.pickQuestion ();
+			//ques = boss.pickQuestion ();
+			ques = boss.getQuestionTempStr();
 			print ("ques is");
 			print (ques);
 			questionDisplay.text = ques;
