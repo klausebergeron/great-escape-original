@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -12,7 +12,7 @@ public class BossQuestions : MonoBehaviour {
 	//const int NumOptions = 13;
 	public Text Question, Ans1, Ans2, Ans3;
 
-	public int numWords = BookScript.bookControl.words.Length;
+	public int numWords = 20;//BookScript.bookControl.words.Length;
 	//public char delim, delim2;
 	public char delim1, delim2, delim3, delim4, delim5;
 
@@ -25,11 +25,42 @@ public class BossQuestions : MonoBehaviour {
 	public List<string> keyList;
 	public static List<string> currAnswers; //Array used to make sure answers aren't repeated
 	public string[] multiple_choice; //Array of multiple choice options
+
+	public string[] words;
+	
+	/*
+	correct_index is used in ButtonPushed script when a player chooses an answer
+	*/
 	public static int correct_index;
 	public static List<string> questionsUsed;
 	
 	// Use this for initialization
 	void Start () {
+		words = new string[] {
+			"Question1 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question2 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 3",
+			"Question3 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 3", 
+			"Question4 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question5 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question6 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question7 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question8 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question9 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question10 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question11 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question12 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question13 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+			"Question14 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question15 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question16 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question17 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+			"Question18 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question19 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+			"Question20 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1"
+
+		};
+
+
 		questionsAnswers = new SortedDictionary<string,string> ();
 		/*
 		delim = ':';
@@ -45,7 +76,7 @@ public class BossQuestions : MonoBehaviour {
 		answerOptions = new List<string> ();
 		questionsUsed = new List<string> ();
 		currAnswers = new List<string> ();
-		parseCorrectWords ();
+		//parseCorrectWords ();
 	}
 	
 	// Update is called once per frame
@@ -83,10 +114,11 @@ public class BossQuestions : MonoBehaviour {
 	}
 
 	// sets map with questions and answers
-	public void parseCorrectWords(){
-		foreach (string str in BookScript.bookControl.words) {
-			//			parseStr (str);
-			//			questionsAnswers [defTmp] = wrdTmp;
+	public void parseCorrectWords(int arrPos){
+
+		//foreach (string str in BookScript.bookControl.words) {
+		//foreach (string str in words) {
+			/*
 			if (isRevWord (str)) { // if in review, ignore it
 				print("in set words for loop");
 				//set review word in QA Map
@@ -102,6 +134,10 @@ public class BossQuestions : MonoBehaviour {
 			print ("IN PARSEWORDS " + answer);
 
 		}
+		*/
+		string str = words[arrPos];
+		parseStr(str);
+		//}
 	}
 
 	/*
@@ -143,16 +179,32 @@ public class BossQuestions : MonoBehaviour {
 		} 
 	}
 
+	public string getQuestionTempStr(){
+		return questionTemp;
+	}
+
+	public int pickQuestion(){
+		print("inside pickQuestion");
+		//check level 
+		int chosenQuestIndex = 1;//Random.Range(0,4);
+		//check if question already used
+		parseCorrectWords(chosenQuestIndex);
+		return chosenQuestIndex;
+	}
 	
 
-
+	/*
 	public string pickQuestion(){
 		//list of all keys in questionAnswers
 		print("inside pickQuestion");
+		//check level first, if level 1 question 1-5
+		int quest = Random.Range(0,5);
+
 		keyList = new List<string> (questionsAnswers.Keys);
 
 		//assign element at a random index from 0 to size of keyList to the string randomKey (will be our question)
-		string randomKey = keyList[Random.Range(0, keyList.Count-1)];
+		//string randomKey = keyList[Random.Range(0, keyList.Count-1)];
+		string randomKey = keyList[Random.Range(0, 3)];
 		print ("randomkey chose:");
 		print (randomKey);
 		while (isQuesUsed (randomKey)) {
@@ -161,6 +213,7 @@ public class BossQuestions : MonoBehaviour {
 		assignAnswers (questionsAnswers [randomKey]);  
 		return randomKey;
 	}
+	*/
 
 	public void assignAnswers(string correct){
 		correct_index = Random.Range (0, NumChoices-1);
@@ -173,8 +226,10 @@ public class BossQuestions : MonoBehaviour {
 
 		for (int i = 0; i <= NumChoices-1; i++) {
 			if (i != correct_index) {
+				/*
 				int rand = Random.Range (0, answerOptions.Count - 1);
 				string ans = answerOptions [rand];
+
 
 				while (currAnswers.Contains (ans)) {
 					rand = Random.Range (0, answerOptions.Count - 1);
@@ -183,9 +238,10 @@ public class BossQuestions : MonoBehaviour {
 				//if (answerOptions [rand] != correct )
 				multiple_choice [i] = ans;
 				currAnswers.Add (ans);
+				*/
+				multiple_choice[i] = choice1;
 
 			}
-
 			else
 				continue;
 		
@@ -215,7 +271,8 @@ public class BossQuestions : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
-			parseCorrectWords ();
+			//parseCorrectWords ();
+			pickQuestion();
 		}
 	}
 }
