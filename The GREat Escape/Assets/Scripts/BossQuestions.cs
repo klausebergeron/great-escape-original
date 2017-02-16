@@ -7,11 +7,28 @@ using UnityEngine.SceneManagement;
 
 public class BossQuestions : MonoBehaviour {
 
+	public class Question
+	{
+		public string question;
+		public List<string> choices;
+		public string answer;
+		public Question (string q, string ch1, string ch2, string ch3, string ch4, string a)
+		{
+			question = q;
+			choices = new List<string>();
+			choices.Add(ch1);
+			choices.Add(ch2);
+			choices.Add(ch3);
+			choices.Add(ch4);
+			answer = a;
+		}
+	}
+
 	const int NumOptions = 13;
 	const int NumChoices = 4;
 
 	//const int NumOptions = 13;
-	public Text Question, Ans1, Ans2, Ans3;
+	//public Text Question, Ans1, Ans2, Ans3;
 
 	public int numWords;//20;//BookScript.bookControl.words.Length;
 	//public char delim, delim2;
@@ -21,13 +38,15 @@ public class BossQuestions : MonoBehaviour {
 	//public string wrdTmp, defTmp, currQuestion;
 	public string questionTemp, choice1, choice2, choice3, choice4, answer, currQuestion;
 	public static SortedDictionary<string,string> questionsAnswers; // map of questions and answers. Q is key, A is value
-	
+
 	public List<string> answerOptions; //holds words to test on
 	public List<string> keyList;
 	public static List<string> currAnswers; //Array used to make sure answers aren't repeated
 	public string[] multiple_choice; //Array of multiple choice options
 
-	public string[] words;
+	//public string[] words;
+	int numQuestions;
+	public List<Question> questions;
 	
 	//public string[] negFB;
 
@@ -40,31 +59,47 @@ public class BossQuestions : MonoBehaviour {
 	questionsUsed has items added by ButtonPushed script
 	whenever a player is done answering a question
 	*/
-	public static List<string> questionsUsed;
+	//public static List<string> questionsUsed;
+	public static List<Question> questionsUsed;
 	public static List<int> indexUsed;
 	
 	// Use this for initialization
 	void Start () {
-		words = new string[] {
-			"Choose the correct statement to define a 1d array of pointers to double with 10 elements. ? " +
-				"'*' double ptrarr[10] # double '*[10]' ptrarr $ double int '*ptrarr[10]' % double '*prtarr[10]' ! double '*prtarr[10]' ", 
+		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
+			"'*' double ptrarr[10]", "double '*[10]' ptrarr", "double int '*ptrarr[10]'", "double '*prtarr[10]'", "double '*prtarr[10]' "));
+		questions.Add (new Question ("What problem/error will likely result from the following code?\n\t'int *p';\n\tfor (int i=0; i < 5; i++)\n\t\tp = new int[10]; ? ",
+			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "Memory leak"));
+		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
+			"free(ptrarr)", "delete ptrarr", "'delete *ptrarr'", " '~ *ptrarr'", "delete ptrarr"));
+		questions.Add (new Question ("Which of the following are pointer variables in the following definition?\n\t'String *pName, name, address' ",
+			"pName, name, and address", "Name", "pName", "Name", "pName"));
+		questions.Add (new Question ("What symbol represents the address-of operator ? ",
+			"'&'", "'*'", "'->'", "None of the above", "'&'"));
+		questions.Add (new Question ("You write the following code: \nint n = 5 \n'int *ptrToN = &n'\nWhat is the name of the operator in this fragment? '&n' ",
+			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "address-of operator"));
 
-			"What problem/error will likely result from the following code?\n\t'int *p';\n\tfor (int i=0; i < 5; i++)\n\t\tp = new int[10]; ? " +
-				"Dangling pointer # Memory leak $ Type mismatch % Segmentation fault ! Memory leak",
-
-			"Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.  ? " +
-				"free(ptrarr) # delete ptrarr $ 'delete *ptrarr' % '~ *ptrarr' ! delete ptrarr", 
-
-			"Which of the following are pointer variables in the following definition?\n\t'String *pName, name, address' " +
-				"pName, name, and address # Name $ pName % Name ! pName", 
-
-			"What symbol represents the address-of operator ? " +
-				"'&' # '*' $ '->' % None of the above ! '&'", 
-
-			"You write the following code: \nint n = 5 \n'int *ptrToN = &n'\nWhat is the name of the operator in this fragment? '&n' ? " +
-				"The and operator # Pointer $ int pointer operator % address-of operator ! address-of operator", 
-
-			"You write the following code: \nint n = 5;\n 'int *ptrToN = &n'\nptrToN is of type ? " +
+	/*  DUPLICATE QUESTIONS START HERE!!!! */
+		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
+			"'*' double ptrarr[10]", "double '*[10]' ptrarr", "double int '*ptrarr[10]'", "double '*prtarr[10]'", "double '*prtarr[10]' "));
+		questions.Add (new Question ("What problem/error will likely result from the following code?\n\t'int *p';\n\tfor (int i=0; i < 5; i++)\n\t\tp = new int[10]; ? ",
+			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "Memory leak"));
+		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
+			"free(ptrarr)", "delete ptrarr", "'delete *ptrarr'", " '~ *ptrarr'", "delete ptrarr"));
+		questions.Add (new Question ("Which of the following are pointer variables in the following definition?\n\t'String *pName, name, address' ",
+			"pName, name, and address", "Name", "pName", "Name", "pName"));
+		questions.Add (new Question ("What symbol represents the address-of operator ? ",
+			"'&'", "'*'", "'->'", "None of the above", "'&'"));
+		questions.Add (new Question ("You write the following code: \nint n = 5 \n'int *ptrToN = &n'\nWhat is the name of the operator in this fragment? '&n' ",
+			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "address-of operator"));
+		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
+			"'*' double ptrarr[10]", "double '*[10]' ptrarr", "double int '*ptrarr[10]'", "double '*prtarr[10]'", "double '*prtarr[10]' "));
+		questions.Add (new Question ("What problem/error will likely result from the following code?\n\t'int *p';\n\tfor (int i=0; i < 5; i++)\n\t\tp = new int[10]; ? ",
+			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "Memory leak"));
+		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
+			"free(ptrarr)", "delete ptrarr", "'delete *ptrarr'", " '~ *ptrarr'", "delete ptrarr"));
+		/*DUPLICATE QUESTIONS END HERE*/
+		
+		/*	"You write the following code: \nint n = 5;\n 'int *ptrToN = &n'\nptrToN is of type ? " +
 				"pointer to int  # int $ Std::string % 'char *' ! pointer to int ", 
 
 			"You write the following code: \nint n = 5; \n'int *ptrToN = &n'\nWhat is the value of '*ptrToN' after the code finishes executing ? " +
@@ -92,30 +127,30 @@ public class BossQuestions : MonoBehaviour {
 				"'&ptr2 = ptr1' # ptr2 = ptr1 $ 'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}' % 'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}' ! &ptr2 = ptr1", 
 
 			"Given the following declaration of a 2D integer array within a class-\n\t'int ** nums;'\n\t'nums = new int*[5]'\n\t'for(int i=0; i<5; i++)'\n\t\tnums[i] = new int[10];\n\t How would you implement the destructor ? " +
-				"'delete [ ] nums' # 'delete [ ][ ] nums' $ 'delete *nums' % None of the above ! None of the above"
+				"'delete [ ] nums' # 'delete [ ][ ] nums' $ 'delete *nums' % None of the above ! None of the above"*/
 
-		};
+
 
 		
+		numQuestions = questions.Count;
 
-
-		numWords = words.Length;
+		/*
 
 		questionsAnswers = new SortedDictionary<string,string> ();
 		/*
 		delim = ':';
 		delim2 = '.';
 		*/
-		delim1 = '?';
+		/* delim1 = '?';
 		delim2 = '#';
 		delim3 = '$';
 		delim4 = '%';
-		delim5 = '!';
+		delim5 = '!';*/
 
 	//	answerOptions = new List<string>[NumOptions];
-		answerOptions = new List<string> ();
-		questionsUsed = new List<string> ();
-		currAnswers = new List<string> ();
+		//answerOptions = new List<string> (); //I Don't knwo what thsi is
+		questionsUsed = new List<Question> ();
+		//currAnswers = new List<string> (); // I dont' know what this is
 		//parseCorrectWords ();
 		indexUsed = new List<int>();
 	}
@@ -156,6 +191,7 @@ public class BossQuestions : MonoBehaviour {
 		return false;
 	}
 
+	/*
 	// sets map with questions and answers
 	public void parseCorrectWords(int arrPos){
 
@@ -178,14 +214,14 @@ public class BossQuestions : MonoBehaviour {
 
 		}
 		*/
-		string str = words[arrPos];
+		/*string str = words[arrPos];
 		parseStr(str);
 		//}
-	}
+	}*/
 
 	/*
 	// breaks word,def string into separate word and definition
-	public void parseStr(string toParse){
+	/*public void parseStr(string toParse){
 		int len = toParse.IndexOf (delim);
 		int len2 = toParse.IndexOf (delim2);
 
@@ -202,7 +238,7 @@ public class BossQuestions : MonoBehaviour {
 
 	
 	//version of parseStr for 4 mult choice 
-	public void parseStr(string toParse){
+	/*public void parseStr(string toParse){
 		 print("in parseStr");
  	     int len = toParse.IndexOf (delim1);
  		 int len2 = toParse.IndexOf (delim2);
@@ -220,7 +256,7 @@ public class BossQuestions : MonoBehaviour {
 
 		 	  answer = toParse.Substring(len4+1, (len5-len4+1)); // gets answer
 		} 
-	}
+	}*/
 
 	public string getQuestionTempStr(){
 		return questionTemp;
@@ -257,7 +293,7 @@ public class BossQuestions : MonoBehaviour {
 
 		
 		indexUsed.Add(chosenQuestIndex); //add to questions used so it is not used again
-		parseCorrectWords(chosenQuestIndex);
+		//parseCorrectWords(chosenQuestIndex);
 		return chosenQuestIndex;
 	}
 	
@@ -284,6 +320,7 @@ public class BossQuestions : MonoBehaviour {
 	}
 	*/
 
+	/*
 	public void assignAnswers(string correct){
 		correct_index = Random.Range (0, NumChoices-1);
 		print("The correct index inside bossquestions is:");
@@ -308,7 +345,7 @@ public class BossQuestions : MonoBehaviour {
 				multiple_choice [i] = ans;
 				currAnswers.Add (ans);
 				*/
-				multiple_choice[i] = choice1;
+				/*multiple_choice[i] = answer;
 
 			}
 			else
@@ -318,21 +355,21 @@ public class BossQuestions : MonoBehaviour {
 
 		currAnswers.Clear ();
 
-	}
+	}*/
 
 
-	public bool isQuestionUsed(string word){ // check if question was already used
+/*	public bool isQuestionUsed(string word){ // check if question was already used
 		foreach (string str in questionsAnswers.Keys) {
 			if ( word == str ) {
 				return true;
 			}
 		}
 		return false;
-	}
+	}*/
 
 	//checks if player got question correct
 	public bool checkAnswer(string playerAnswer){
-		if (questionsAnswers [currQuestion].Equals (playerAnswer)) {
+	if (questions[indexUsed[indexUsed.Count-1]].answer.Equals (playerAnswer)) {
 			return true;
 		}
 		return false;

@@ -97,6 +97,7 @@
 'Assets/Scripts/PersistenceSceneController.cs'
 'Assets/Scripts/PlayerController.cs'
 'Assets/Scripts/PlayerPersistentData.cs'
+'Assets/Scripts/Question.cs'
 'Assets/Scripts/QuestionCanvas.cs'
 'Assets/Scripts/QuestionPanel.cs'
 'Assets/Scripts/ReviewScript.cs'
