@@ -28,6 +28,9 @@ public class BossQuestions : MonoBehaviour {
 	public string[] multiple_choice; //Array of multiple choice options
 
 	public string[] words;
+	public string[] correctFB;
+	public string[] wrongFB;
+	//public string[] negFB;
 
 	
 	/*
@@ -66,6 +69,33 @@ public class BossQuestions : MonoBehaviour {
 			"Question20 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1"
 
 		};
+
+		correctFB = new string[] {
+			"Way to go!",
+			"You rock at this!",
+			"Lookin’ good!",
+			"Wow! I’m impressed!",
+			"Keep at it!",
+			"Good going!",
+			"You were born a winner!",
+			"Victory is yours!",
+			"That was awesome!",
+			"Great Job!",
+			"Knew you could do it",
+			"Great Job!",
+			"You’re so good at this!",
+			"That answer was perfect!"
+		};
+
+		wrongFB = new string[] {
+			"Keep going!",
+			"Keep trying!", 
+			"You can do it... Try again!", 
+			"You WILL succeed!", 
+			"You are so close to success!"
+		};
+
+
 		numWords = words.Length;
 
 		questionsAnswers = new SortedDictionary<string,string> ();
