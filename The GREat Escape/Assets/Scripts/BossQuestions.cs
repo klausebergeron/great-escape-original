@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class BossQuestions : MonoBehaviour {
 
@@ -12,7 +13,7 @@ public class BossQuestions : MonoBehaviour {
 	//const int NumOptions = 13;
 	public Text Question, Ans1, Ans2, Ans3;
 
-	public int numWords = 20;//BookScript.bookControl.words.Length;
+	public int numWords;//20;//BookScript.bookControl.words.Length;
 	//public char delim, delim2;
 	public char delim1, delim2, delim3, delim4, delim5;
 
@@ -27,12 +28,18 @@ public class BossQuestions : MonoBehaviour {
 	public string[] multiple_choice; //Array of multiple choice options
 
 	public string[] words;
+
 	
 	/*
 	correct_index is used in ButtonPushed script when a player chooses an answer
 	*/
 	public static int correct_index;
+	/*
+	questionsUsed has items added by ButtonPushed script
+	whenever a player is done answering a question
+	*/
 	public static List<string> questionsUsed;
+	public static List<int> indexUsed;
 	
 	// Use this for initialization
 	void Start () {
@@ -59,7 +66,7 @@ public class BossQuestions : MonoBehaviour {
 			"Question20 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1"
 
 		};
-
+		numWords = words.Length;
 
 		questionsAnswers = new SortedDictionary<string,string> ();
 		/*
@@ -77,6 +84,7 @@ public class BossQuestions : MonoBehaviour {
 		questionsUsed = new List<string> ();
 		currAnswers = new List<string> ();
 		//parseCorrectWords ();
+		indexUsed = new List<int>();
 	}
 	
 	// Update is called once per frame
@@ -185,9 +193,35 @@ public class BossQuestions : MonoBehaviour {
 
 	public int pickQuestion(){
 		print("inside pickQuestion");
+		
 		//check level 
-		int chosenQuestIndex = 1;//Random.Range(0,4);
-		//check if question already used
+		Scene scene = SceneManager.GetActiveScene();
+		print("Active scene is " + scene.name);
+		int chosenQuestIndex = -1;
+		if(scene.name == "Boss Battle"){
+			chosenQuestIndex = Random.Range(0,4);
+			while(indexUsed.Contains(chosenQuestIndex)){ //make sure you haven't used this question already
+				chosenQuestIndex = Random.Range(0,4);
+			}
+
+		}
+		if(scene.name == "Boss Battle 2"){
+			chosenQuestIndex = Random.Range(5,9);
+			while(indexUsed.Contains(chosenQuestIndex)){
+				chosenQuestIndex = Random.Range(5,9);
+			}
+
+		}
+		if(scene.name == "Boss Battle 3"){
+			chosenQuestIndex = Random.Range(10,15);
+			while(indexUsed.Contains(chosenQuestIndex)){
+				chosenQuestIndex = Random.Range(10,15);
+			}
+
+		}
+
+		
+		indexUsed.Add(chosenQuestIndex); //add to questions used so it is not used again
 		parseCorrectWords(chosenQuestIndex);
 		return chosenQuestIndex;
 	}

@@ -29,18 +29,25 @@ public class ButtonPushed : MonoBehaviour {
 		print (Name);
 		chosen = int.Parse (Name);
 
+		/*
+		if player chooses correct answer, 
+		boss loses health and the question just answered is added to used questions arr
+		*/
 		if (chosen == correct_answer) {
+			print("chose correct answer");
 			player.rightSound.Play ();
 			bossHealth.changeBar (10);
 			BossQuestions.questionsUsed.Add (StompEnemy.ques);
+			clear.ClearQuestionDisplay ();
 	
 		} 
 		if (chosen != correct_answer)
-		{
-			Health.changeBar (10);	
+		{	
+			print("chose wrong answer");
+			//Health.changeBar (10);	
 			player.wrongSound.Play ();
 		}
-		clear.ClearQuestionDisplay ();
+		//clear.ClearQuestionDisplay ();
 	}
 		
 }
