@@ -76,60 +76,27 @@ public class BossQuestions : MonoBehaviour {
 		questions.Add (new Question ("What symbol represents the address-of operator ? ",
 			"'&'", "'*'", "'->'", "None of the above", "'&'"));
 		questions.Add (new Question ("You write the following code: \nint n = 5 \n'int *ptrToN = &n'\nWhat is the name of the operator in this fragment? '&n' ",
-			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "address-of operator"));
-
-	/*  DUPLICATE QUESTIONS START HERE!!!! */
-		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
-			"'*' double ptrarr[10]", "double '*[10]' ptrarr", "double int '*ptrarr[10]'", "double '*prtarr[10]'", "double '*prtarr[10]' "));
-		questions.Add (new Question ("What problem/error will likely result from the following code?\n\t'int *p';\n\tfor (int i=0; i < 5; i++)\n\t\tp = new int[10]; ? ",
-			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "Memory leak"));
-		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
-			"free(ptrarr)", "delete ptrarr", "'delete *ptrarr'", " '~ *ptrarr'", "delete ptrarr"));
-		questions.Add (new Question ("Which of the following are pointer variables in the following definition?\n\t'String *pName, name, address' ",
-			"pName, name, and address", "Name", "pName", "Name", "pName"));
-		questions.Add (new Question ("What symbol represents the address-of operator ? ",
-			"'&'", "'*'", "'->'", "None of the above", "'&'"));
-		questions.Add (new Question ("You write the following code: \nint n = 5 \n'int *ptrToN = &n'\nWhat is the name of the operator in this fragment? '&n' ",
-			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "address-of operator"));
-		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
-			"'*' double ptrarr[10]", "double '*[10]' ptrarr", "double int '*ptrarr[10]'", "double '*prtarr[10]'", "double '*prtarr[10]' "));
-		questions.Add (new Question ("What problem/error will likely result from the following code?\n\t'int *p';\n\tfor (int i=0; i < 5; i++)\n\t\tp = new int[10]; ? ",
-			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "Memory leak"));
-		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
-			"free(ptrarr)", "delete ptrarr", "'delete *ptrarr'", " '~ *ptrarr'", "delete ptrarr"));
-		/*DUPLICATE QUESTIONS END HERE*/
-		
-		/*	"You write the following code: \nint n = 5;\n 'int *ptrToN = &n'\nptrToN is of type ? " +
-				"pointer to int  # int $ Std::string % 'char *' ! pointer to int ", 
-
-			"You write the following code: \nint n = 5; \n'int *ptrToN = &n'\nWhat is the value of '*ptrToN' after the code finishes executing ? " +
-				"5 # hexadecimal address of n $ binary address of 5 % address of 5 ! 5", 
-
-			"You write the following code: \nint n = 5; \nint '*ptrToN = n'\nWhat is the value of ptrToN after the code finishes executing ? " +
-				"5 # hexadecimal address of n $ binary address of 5 % address of 5 ! hexadecimal address of n", 
-
-			"In the following code, 'baz = *foo' \n'*' is called the " +
-				"dot operator # star operator $ dereference operator % Asterisk operator ! dereference operator", 
-
-			"Which symbol represents the dereference operator ? " +
-				"'*' # '.' $ '->' % '&' ! '*'", 
-
-			"'*' is the '_________' operator, and can be read as 'value pointed to by' ? " +
-				"dereference # value at start $ reference to malloc % address=of ! dereference", 
-
-			"Choose the correct statement to declare a pointer that points to another pointer ? " +
-				"'int *ptr' # 'int ptr**' $ 'int *&ptr' % 'int ** ptr' ! int ** ptr", 
-
-			"Given the following declarations:\n\t'int * ptr1;'\n\t'int * ptr2;'\n\tptr1 = new int[5];\n\twhat statement will produce a shallow copy ? " +
-				"'&ptr2 = ptr1' # ptr2 = ptr1 $ 'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}' % 'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}' ! ptr2 = ptr1", 
-
-			"Given the following declarations:\n\t'int * ptr1;'\n\t'int * ptr2;'\n\tptr1 = new int[5];\n\twhat statement will produce a deep copy ? " +
-				"'&ptr2 = ptr1' # ptr2 = ptr1 $ 'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}' % 'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}' ! &ptr2 = ptr1", 
-
-			"Given the following declaration of a 2D integer array within a class-\n\t'int ** nums;'\n\t'nums = new int*[5]'\n\t'for(int i=0; i<5; i++)'\n\t\tnums[i] = new int[10];\n\t How would you implement the destructor ? " +
-				"'delete [ ] nums' # 'delete [ ][ ] nums' $ 'delete *nums' % None of the above ! None of the above"*/
-
-
+			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "address-of operator"));		
+		questions.Add (new Question ("You write the following code: \nint n = 5;\n 'int *ptrToN = &n'\nptrToN is of type ? ", 
+			"pointer to int", "int", "Std::string",  "'char *'",  "pointer to int ")); 
+		questions.Add (new Question ("You write the following code: \nint n = 5; \n'int *ptrToN = &n'\nWhat is the value of '*ptrToN' after the code finishes executing ? ",
+			"5", "hexadecimal address of n", "binary address of 5", "address of 5",  "5"));
+		questions.Add (new Question ("You write the following code: \nint n = 5; \nint '*ptrToN = n'\nWhat is the value of ptrToN after the code finishes executing ? ",
+			"5", "hexadecimal address of n", "binary address of 5", "address of 5", "hexadecimal address of n")); 
+		questions.Add (new Question ("In the following code, 'baz = *foo' \n'*' is called the ",
+			"dot operator",  "star operator", "dereference operator", "Asterisk operator", "dereference operator")); 
+		questions.Add (new Question ("Which symbol represents the dereference operator ? ",
+			"'*'", "'.'", "'->'", "'&'", "'*'"));
+		questions.Add (new Question ("'*' is the '_________' operator, and can be read as 'value pointed to by' ? ",
+				"dereference", "value at start", "reference to malloc", "address-of", "dereference")); 
+		questions.Add (new Question ("Choose the correct statement to declare a pointer that points to another pointer ? ",
+				"'int *ptr'", "'int ptr**'", "'int *&ptr'", "'int ** ptr'", "int ** ptr")); 
+		questions.Add (new Question ("Given the following declarations:\n\t'int * ptr1;'\n\t'int * ptr2;'\n\tptr1 = new int[5];\n\twhat statement will produce a shallow copy ? ",
+			"'&ptr2 = ptr1'", "ptr2 = ptr1", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}'", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}'", "ptr2 = ptr1")); 
+		questions.Add (new Question ("Given the following declarations:\n\t'int * ptr1;'\n\t'int * ptr2;'\n\tptr1 = new int[5];\n\twhat statement will produce a deep copy ? ",
+			"'&ptr2 = ptr1'", "ptr2 = ptr1", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}'", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}'", "&ptr2 = ptr1")); 
+		questions.Add (new Question ("Given the following declaration of a 2D integer array within a class-\n\t'int ** nums;'\n\t'nums = new int*[5]'\n\t'for(int i=0; i<5; i++)'\n\t\tnums[i] = new int[10];\n\t How would you implement the destructor ? ",
+			"'delete [ ] nums'", "'delete [ ][ ] nums'", "'delete *nums'", "None of the above", "None of the above"));
 
 		
 		numQuestions = questions.Count;
@@ -182,7 +149,7 @@ public class BossQuestions : MonoBehaviour {
 		return false;
 	}
 
-
+	/*
 	public bool isQuesUsed(string check){
 		foreach (string i in questionsUsed) {
 			if (i == check)
@@ -190,7 +157,7 @@ public class BossQuestions : MonoBehaviour {
 		}
 		return false;
 	}
-
+	*/
 	/*
 	// sets map with questions and answers
 	public void parseCorrectWords(int arrPos){

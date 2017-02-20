@@ -67,7 +67,7 @@ public class ButtonPushed : MonoBehaviour {
 			print("feedback received: " + getCorrectFeedback());
 			player.rightSound.Play ();
 			bossHealth.changeBar (10);
-			BossQuestions.questionsUsed.Add (StompEnemy.ques);
+			//BossQuestions.questionsUsed.Add (StompEnemy.ques);
 			clear.ClearQuestionDisplay ();
 	
 		} 

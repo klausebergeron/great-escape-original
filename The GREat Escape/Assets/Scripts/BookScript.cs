@@ -85,29 +85,29 @@ public class BookScript : MonoBehaviour {
 
 		};
 
-		words = new string[] {
-			"Question1 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
-			"Question2 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 3",
-			"Question3 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 3", 
-			"Question4 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
-			"Question5 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
-			"Question6 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
-			"Question7 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
-			"Question8 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
-			"Question9 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
-			"Question10 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
-			"Question11 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
-			"Question12 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
-			"Question13 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
-			"Question14 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
-			"Question15 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
-			"Question16 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
-			"Question17 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
-			"Question18 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
-			"Question19 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
-			"Question20 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1"
-
-		};
+//		words = new string[] {
+//			"Question1 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+//			"Question2 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 3",
+//			"Question3 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 3", 
+//			"Question4 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+//			"Question5 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+//			"Question6 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+//			"Question7 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+//			"Question8 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+//			"Question9 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+//			"Question10 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+//			"Question11 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+//			"Question12 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+//			"Question13 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice 4", 
+//			"Question14 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+//			"Question15 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+//			"Question16 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+//			"Question17 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice2", 
+//			"Question18 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+//			"Question19 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1", 
+//			"Question20 is ? choice1 # choice2 $ choice 3 % choice 4 ! choice1"
+//
+//		};
 			
 
 		reviewIndices = new List<int>();
