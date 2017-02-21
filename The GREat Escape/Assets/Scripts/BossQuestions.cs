@@ -32,7 +32,7 @@ public class BossQuestions : MonoBehaviour {
 
 	public int numWords;//20;//BookScript.bookControl.words.Length;
 	//public char delim, delim2;
-	public char delim1, delim2, delim3, delim4, delim5;
+	//public char delim1, delim2, delim3, delim4, delim5;
 
 
 	//public string wrdTmp, defTmp, currQuestion;
