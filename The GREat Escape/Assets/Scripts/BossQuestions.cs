@@ -65,6 +65,7 @@ public class BossQuestions : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		questions = new List<Question>();
 		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
 			"'*' double ptrarr[10]", "double '*[10]' ptrarr", "double int '*ptrarr[10]'", "double '*prtarr[10]'", "double '*prtarr[10]' "));
 		questions.Add (new Question ("What problem/error will likely result from the following code?\n\t'int *p';\n\tfor (int i=0; i < 5; i++)\n\t\tp = new int[10]; ? ",

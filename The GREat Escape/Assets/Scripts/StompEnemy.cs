@@ -20,7 +20,10 @@ public class StompEnemy : MonoBehaviour {
 	GameObject button4;
 	public static string ques;
 
+	public int index;
+
 	void Start () {
+		index = -1;
 		boss = FindObjectOfType<BossQuestions> ();
 		qCanvas = FindObjectOfType<QuestionCanvas> ();
 		panel = FindObjectOfType<QuestionPanel> ();
@@ -40,10 +43,10 @@ public class StompEnemy : MonoBehaviour {
 
 	void MC(){
 		//assign word choices to button texts
-		choice1.GetComponentInChildren<Text>().text = boss.choice1;//boss.multiple_choice [0];
-		choice2.GetComponentInChildren<Text>().text = boss.choice2;//boss.multiple_choice [1];
-		choice3.GetComponentInChildren<Text>().text = boss.choice3;//boss.multiple_choice [2];
-		choice4.GetComponentInChildren<Text>().text = boss.choice4;//boss.multiple_choice [3];
+		choice1.GetComponentInChildren<Text>().text = boss.questions[index].choices[0];//boss.choice1;//boss.multiple_choice [0];
+		choice2.GetComponentInChildren<Text>().text = boss.questions[index].choices[1];//boss.choice2;//boss.multiple_choice [1];
+		choice3.GetComponentInChildren<Text>().text = boss.questions[index].choices[2];//boss.choice3;//boss.multiple_choice [2];
+		choice4.GetComponentInChildren<Text>().text = boss.questions[index].choices[3];//boss.choice4;//boss.multiple_choice [3];
 
 	}
 
@@ -55,7 +58,8 @@ public class StompEnemy : MonoBehaviour {
 		}
 
 		if (other.tag == "Boss") {
-			boss.pickQuestion();
+			print("you collided with boss");
+			index = boss.pickQuestion(); //returns index from array 
 			qCanvas.enableQuestionCanvas ();
 			panel.enable ();
 
@@ -67,7 +71,8 @@ public class StompEnemy : MonoBehaviour {
 			Time.timeScale = 0.0f;
 
 			//ques = boss.pickQuestion ();
-			ques = boss.getQuestionTempStr();
+			ques = boss.questions[index].question;
+			//ques = boss.getQuestionTempStr();
 			print ("ques is");
 			print (ques);
 			questionDisplay.text = ques;
