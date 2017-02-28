@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ButtonPushed : MonoBehaviour {
@@ -10,6 +10,7 @@ public class ButtonPushed : MonoBehaviour {
 	public BossHealthBar bossHealth;
 	public PlayerController player;
 	public GameButtons clear;
+	public FeedbackPanel fbPanel;
 
 	//for feedback
 	public string[] correctFB;
@@ -17,6 +18,7 @@ public class ButtonPushed : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		fbPanel = FindObjectOfType<FeedbackPanel> ();
 		Health = FindObjectOfType<HealthBar> ();
 		bossHealth = FindObjectOfType<BossHealthBar> ();
 		player = FindObjectOfType<PlayerController> ();
@@ -69,6 +71,7 @@ public class ButtonPushed : MonoBehaviour {
 			bossHealth.changeBar (10);
 			//BossQuestions.questionsUsed.Add (StompEnemy.ques);
 			clear.ClearQuestionDisplay ();
+			
 	
 		} 
 		if (chosen != correct_answer)
@@ -79,6 +82,8 @@ public class ButtonPushed : MonoBehaviour {
 			player.wrongSound.Play ();
 		}
 		//clear.ClearQuestionDisplay ();
+		fbPanel.enableFBPanel(); //enable feedback panel
+
 	}
 
 

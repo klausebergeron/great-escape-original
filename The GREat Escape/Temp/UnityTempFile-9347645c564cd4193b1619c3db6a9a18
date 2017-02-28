@@ -85,6 +85,7 @@
 'Assets/Scripts/Checkpoint.cs'
 'Assets/Scripts/Collect.cs'
 'Assets/Scripts/EnterNameScript.cs'
+'Assets/Scripts/FeedbackPanel.cs'
 'Assets/Scripts/GameButtons.cs'
 'Assets/Scripts/HealthBar.cs'
 'Assets/Scripts/HurtPlayer.cs'
