@@ -11,6 +11,11 @@ public class ButtonPushed : MonoBehaviour {
 	public PlayerController player;
 	public GameButtons clear;
 	public FeedbackPanel fbPanel;
+	public BossQuestions bossQ;
+
+	float timer = 0;
+
+	public string feedback;
 
 	//for feedback
 	public string[] correctFB;
@@ -18,6 +23,8 @@ public class ButtonPushed : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		feedback = "";
+		bossQ = FindObjectOfType<BossQuestions> ();
 		fbPanel = FindObjectOfType<FeedbackPanel> ();
 		Health = FindObjectOfType<HealthBar> ();
 		bossHealth = FindObjectOfType<BossHealthBar> ();
@@ -50,9 +57,10 @@ public class ButtonPushed : MonoBehaviour {
 		};
 
 	}
+
 		
 	public void Pushed(){
-		correct_answer = BossQuestions.correct_index;
+		correct_answer = int.Parse(bossQ.getAnswer());
 		print ("correct answer inside buttonpushed is");
 		print(correct_answer);
 		Name = gameObject.name;
@@ -60,31 +68,48 @@ public class ButtonPushed : MonoBehaviour {
 		print (Name);
 		chosen = int.Parse (Name);
 
+
 		/*
 		if player chooses correct answer, 
 		boss loses health and the question just answered is added to used questions arr
 		*/
-		if (chosen == correct_answer) {
+		if (chosen == (int)correct_answer) {
 			print("chose correct answer");
-			print("feedback received: " + getCorrectFeedback());
+			feedback = getCorrectFeedback();
+			print("feedback received: " + feedback);
 			player.rightSound.Play ();
 			bossHealth.changeBar (10);
 			//BossQuestions.questionsUsed.Add (StompEnemy.ques);
+			fbPanel.enableFBPanel(feedback); //enable feedback panel
 			clear.ClearQuestionDisplay ();
+			Pause(10);
+			fbPanel.disableFBPanel ();
 			
 	
 		} 
-		if (chosen != correct_answer)
+		if (chosen != (int)correct_answer)
 		{	
 			print("chose wrong answer");
+			feedback = getWrongFeedback();
 			print("feedback received: " + getWrongFeedback());
 			//Health.changeBar (10);	
 			player.wrongSound.Play ();
+			fbPanel.enableFBPanel(feedback); //enable feedback panel
 		}
 		//clear.ClearQuestionDisplay ();
-		fbPanel.enableFBPanel(); //enable feedback panel
-
 	}
+
+
+	private IEnumerator Pause(int p) {
+         Time.timeScale = 0.1f;
+         float pauseEndTime = Time.realtimeSinceStartup + 1;
+         while (Time.realtimeSinceStartup < pauseEndTime) {
+              yield return 0;
+         }
+         Time.timeScale = 1;
+    }
+
+
 
 
 	/*
@@ -97,6 +122,8 @@ public class ButtonPushed : MonoBehaviour {
 		return correctFB[pos];
 	}
 
+
+
 	/*
 	returns random feedback phrase when player answers correctly
 	called by Button Pushed script
@@ -106,5 +133,7 @@ public class ButtonPushed : MonoBehaviour {
 		int pos = Random.Range(0,size-1);
 		return wrongFB[pos];
 	}
+
+
 		
 }

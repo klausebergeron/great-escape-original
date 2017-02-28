@@ -14,7 +14,7 @@ public class MessagePanel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print("in MessagePanel script Update()");
+		//print("in MessagePanel script Update()");
 		if (!string.IsNullOrEmpty (WordDisplay.text.ToString ().Trim ())) {
 			this.GetComponent<SpriteRenderer>().enabled = true;
 			button.SetActive(true);

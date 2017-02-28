@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class FeedbackPanel : MonoBehaviour {
 	public Text fbDisplay;
 	public GameObject p;
+	public ButtonPushed btnPushed;
 	//public GameObject button;
 
 	void Awake() {
@@ -20,6 +21,7 @@ public class FeedbackPanel : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		print("in Start of FeedbackPanel script");
+		btnPushed = FindObjectOfType<ButtonPushed> ();
 		fbDisplay.text = "";
 		this.GetComponent<Image>().enabled = false;
 		//button.SetActive(false);
@@ -40,15 +42,16 @@ public class FeedbackPanel : MonoBehaviour {
 
 
 	//called by to enable feedback panel
-	public void enableFBPanel() {
+	public void enableFBPanel(string feedback) {
 		print("in enableFBPanel of FeedbackPanel script");
-		fbDisplay.text = "this is text for Feedback";
+		fbDisplay.text = feedback;
 		//this.GetComponent<SpriteRenderer>().enabled = true;
 		this.GetComponent<Image>().enabled = true;
 	}
 
 	public void disableFBPanel (){
 		print("in disableFBPanel of FeedbackPanel script");
-		this.GetComponent<SpriteRenderer> ().enabled = false;
+		fbDisplay.text = "";
+		this.GetComponent<Image> ().enabled = false;
 	}
 }

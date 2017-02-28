@@ -66,16 +66,16 @@ public class BossQuestions : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		questions = new List<Question>();
-		questions.Add (new Question ("& Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
-			"'*' double ptrarr[10]", "double '*[10]' ptrarr", "double int '*ptrarr[10]'", "double '*prtarr[10]'", "double '*prtarr[10]' "));
+		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
+			"'*' double ptrarr[10]", "double '*[10]' ptrarr", "double int '*ptrarr[10]'", "double '*prtarr[10]'", "3"));
 		questions.Add (new Question ("What problem/error will likely result from the following code?\n\tint *p;\n\tfor (int i=0; i < 5; i++)\n\t\tp = new int[10]; ? ",
-			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "Memory leak"));
+			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "1"));
 		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
-			"free(ptrarr)", "delete ptrarr", "'delete *ptrarr'", " '~ *ptrarr'", "delete ptrarr"));
+			"free(ptrarr)", "delete ptrarr", "'delete *ptrarr'", " '~ *ptrarr'", "1"));
 		questions.Add (new Question ("Which of the following are pointer variables in the following definition?\n\t'String *pName, name, address' ",
-			"pName, name, and address", "Name", "pName", "Name", "pName"));
+			"pName, name, and address", "Name", "pName", "Name", "2"));
 		questions.Add (new Question ("What symbol represents the address-of operator ? ",
-			"'&'", "'*'", "'->'", "None of the above", "'&'"));
+			"'&'", "'*'", "'->'", "None of the above", "0"));
 		questions.Add (new Question ("You write the following code: \nint n = 5 \n'int *ptrToN = &n'\nWhat is the name of the operator in this fragment? '&n' ",
 			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "address-of operator"));		
 		questions.Add (new Question ("You write the following code: \nint n = 5;\n 'int *ptrToN = &n'\nptrToN is of type ? ", 
@@ -126,6 +126,12 @@ public class BossQuestions : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+
+
+	public string getAnswer() {
+		return questions[indexUsed[indexUsed.Count-1]].answer;
 	}
 
 	
@@ -256,7 +262,6 @@ public class BossQuestions : MonoBehaviour {
 			while(indexUsed.Contains(chosenQuestIndex)){
 				chosenQuestIndex = Random.Range(10,15);
 			}
-
 		}
 
 		
@@ -337,6 +342,8 @@ public class BossQuestions : MonoBehaviour {
 
 	//checks if player got question correct
 	public bool checkAnswer(string playerAnswer){
+		print("answer is "+ questions[indexUsed[indexUsed.Count-1]].answer);
+		//if (questions[indexUsed[indexUsed.Count-1]].answer.Equals (playerAnswer)) {
 		if (questions[indexUsed[indexUsed.Count-1]].answer.Equals (playerAnswer)) {
 			return true;
 		}
