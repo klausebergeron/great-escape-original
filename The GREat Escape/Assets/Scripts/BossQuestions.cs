@@ -77,27 +77,27 @@ public class BossQuestions : MonoBehaviour {
 		questions.Add (new Question ("What symbol represents the address-of operator ? ",
 			"'&'", "'*'", "'->'", "None of the above", "0"));
 		questions.Add (new Question ("You write the following code: \nint n = 5 \n'int *ptrToN = &n'\nWhat is the name of the operator in this fragment? '&n' ",
-			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "address-of operator"));		
+			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "3"));		
 		questions.Add (new Question ("You write the following code: \nint n = 5;\n 'int *ptrToN = &n'\nptrToN is of type ? ", 
-			"pointer to int", "int", "Std::string",  "'char *'",  "pointer to int ")); 
+			"pointer to int", "int", "Std::string",  "'char *'",  "0")); 
 		questions.Add (new Question ("You write the following code: \nint n = 5; \n'int *ptrToN = &n'\nWhat is the value of '*ptrToN' after the code finishes executing ? ",
-			"5", "hexadecimal address of n", "binary address of 5", "address of 5",  "5"));
+			"5", "hexadecimal address of n", "binary address of 5", "address of 5",  "0"));
 		questions.Add (new Question ("You write the following code: \nint n = 5; \nint '*ptrToN = n'\nWhat is the value of ptrToN after the code finishes executing ? ",
-			"5", "hexadecimal address of n", "binary address of 5", "address of 5", "hexadecimal address of n")); 
+			"5", "hexadecimal address of n", "binary address of 5", "address of 5", "1")); 
 		questions.Add (new Question ("In the following code, 'baz = *foo' \n'*' is called the ",
-			"dot operator",  "star operator", "dereference operator", "Asterisk operator", "dereference operator")); 
+			"dot operator",  "star operator", "dereference operator", "Asterisk operator", "2")); 
 		questions.Add (new Question ("Which symbol represents the dereference operator ? ",
-			"'*'", "'.'", "'->'", "'&'", "'*'"));
+			"'*'", "'.'", "'->'", "'&'", "0"));
 		questions.Add (new Question ("'*' is the '_________' operator, and can be read as 'value pointed to by' ? ",
-				"dereference", "value at start", "reference to malloc", "address-of", "dereference")); 
+				"dereference", "value at start", "reference to malloc", "address-of", "0")); 
 		questions.Add (new Question ("Choose the correct statement to declare a pointer that points to another pointer ? ",
-				"'int *ptr'", "'int ptr**'", "'int *&ptr'", "'int ** ptr'", "int ** ptr")); 
+				"'int *ptr'", "'int ptr**'", "'int *&ptr'", "'int ** ptr'", "3")); 
 		questions.Add (new Question ("Given the following declarations:\n\t'int * ptr1;'\n\t'int * ptr2;'\n\tptr1 = new int[5];\n\twhat statement will produce a shallow copy ? ",
-			"'&ptr2 = ptr1'", "ptr2 = ptr1", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}'", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}'", "ptr2 = ptr1")); 
+			"'&ptr2 = ptr1'", "ptr2 = ptr1", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}'", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}'", "1")); 
 		questions.Add (new Question ("Given the following declarations:\n\t'int * ptr1;'\n\t'int * ptr2;'\n\tptr1 = new int[5];\n\twhat statement will produce a deep copy ? ",
-			"'&ptr2 = ptr1'", "ptr2 = ptr1", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}'", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}'", "&ptr2 = ptr1")); 
+			"'&ptr2 = ptr1'", "ptr2 = ptr1", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {ptr2[i] = ptr1[i]}'", "'ptr2 = new int[5]; for(int i = 0; i<5; i++) {*ptr1[i] = *ptr2[i]}'", "0")); 
 		questions.Add (new Question ("Given the following declaration of a 2D integer array within a class-\n\t'int ** nums;'\n\t'nums = new int*[5]'\n\t'for(int i=0; i<5; i++)'\n\t\tnums[i] = new int[10];\n\t How would you implement the destructor ? ",
-			"'delete [ ] nums'", "'delete [ ][ ] nums'", "'delete *nums'", "None of the above", "None of the above"));
+			"'delete [ ] nums'", "'delete [ ][ ] nums'", "'delete *nums'", "None of the above", "3"));
 
 		
 		numQuestions = questions.Count;
