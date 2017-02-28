@@ -80,7 +80,7 @@ public class ButtonPushed : MonoBehaviour {
 			player.rightSound.Play ();
 			bossHealth.changeBar (10);
 			//BossQuestions.questionsUsed.Add (StompEnemy.ques);
-			fbPanel.enableFBPanel(feedback); //enable feedback panel
+			fbPanel.enableFBPanel(feedback, true); //enable feedback panel
 			clear.ClearQuestionDisplay ();
 			Pause(10);
 			fbPanel.disableFBPanel ();
@@ -94,7 +94,7 @@ public class ButtonPushed : MonoBehaviour {
 			print("feedback received: " + getWrongFeedback());
 			//Health.changeBar (10);	
 			player.wrongSound.Play ();
-			fbPanel.enableFBPanel(feedback); //enable feedback panel
+			fbPanel.enableFBPanel(feedback, false); //enable feedback panel
 		}
 		//clear.ClearQuestionDisplay ();
 	}

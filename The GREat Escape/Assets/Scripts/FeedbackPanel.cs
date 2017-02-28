@@ -42,9 +42,14 @@ public class FeedbackPanel : MonoBehaviour {
 
 
 	//called by to enable feedback panel
-	public void enableFBPanel(string feedback) {
+	public void enableFBPanel(string feedback, bool correct) {
 		print("in enableFBPanel of FeedbackPanel script");
 		fbDisplay.text = feedback;
+		if(correct){
+			fbDisplay.color = Color.green;
+		} else {
+			fbDisplay.color = Color.red;
+		}
 		//this.GetComponent<SpriteRenderer>().enabled = true;
 		this.GetComponent<Image>().enabled = true;
 	}
