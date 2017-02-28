@@ -82,9 +82,10 @@ public class ButtonPushed : MonoBehaviour {
 			//BossQuestions.questionsUsed.Add (StompEnemy.ques);
 			fbPanel.enableFBPanel(feedback, true); //enable feedback panel
 			clear.ClearQuestionDisplay ();
-			Pause(10);
-			fbPanel.disableFBPanel ();
-			
+			//Pause(10);
+			//yield return new WaitForSeconds(10);
+			Invoke("closePanel", 1);
+
 	
 		} 
 		if (chosen != (int)correct_answer)
@@ -95,19 +96,36 @@ public class ButtonPushed : MonoBehaviour {
 			//Health.changeBar (10);	
 			player.wrongSound.Play ();
 			fbPanel.enableFBPanel(feedback, false); //enable feedback panel
+			//yield return new WaitForSeconds(0);
 		}
 		//clear.ClearQuestionDisplay ();
 	}
 
+	private void closePanel()
+	{
+		print ("closing");
+		fbPanel.disableFBPanel ();
+	}
 
-	private IEnumerator Pause(int p) {
+
+
+/*	private IEnumerator Pause(int p) {
          Time.timeScale = 0.1f;
          float pauseEndTime = Time.realtimeSinceStartup + 1;
          while (Time.realtimeSinceStartup < pauseEndTime) {
               yield return 0;
          }
          Time.timeScale = 1;
-    }
+    }*/
+
+	private IEnumerator Pause(int p)
+	{
+		print ("In pause");
+		Time.timeScale = 0.1f;
+		yield return new WaitForSeconds(p);
+		Time.timeScale = 1;
+		print ("End pause");
+	}
 
 
 
