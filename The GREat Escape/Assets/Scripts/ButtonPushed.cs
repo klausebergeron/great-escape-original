@@ -103,7 +103,6 @@ public class ButtonPushed : MonoBehaviour {
 
 	private void closePanel()
 	{
-		print ("closing");
 		fbPanel.disableFBPanel ();
 	}
 
