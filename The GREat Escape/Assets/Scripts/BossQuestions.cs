@@ -68,7 +68,7 @@ public class BossQuestions : MonoBehaviour {
 		questions = new List<Question>();
 		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
 			"*double ptrarr[10]", "double *[10] ptrarr", "double int *ptrarr[10]", "double *prtarr[10]", "3"));
-		questions.Add (new Question ("What problem/error will likely result from the following code?\nint *p;\nfor (int i=0; i < 5; i++)\n\tp = new int[10];",
+		questions.Add (new Question ("What problem/error will likely result from the following code? int *p;\nfor (int i=0; i < 5; i++)\n\tp = new int[10];",
 			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "1"));
 		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
 			"free(ptrarr)", "delete ptrarr", "delete *ptrarr", " ~ *ptrarr", "1"));
@@ -76,13 +76,13 @@ public class BossQuestions : MonoBehaviour {
 			"pName, name, and address", "Name", "pName", "Name", "2"));
 		questions.Add (new Question ("What symbol represents the address-of operator ? ",
 			"&", "*", "->", "None of the above", "0"));
-		questions.Add (new Question ("You write the following code: \nint n = 5 \nint *ptrToN = &n\nWhat is the name of the operator in this fragment? &n",
+		questions.Add (new Question ("You write the following code:int n = 5; \nint *ptrToN = &n;\nWhat is the name of the operator in this fragment &n ?",
 			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "3"));		
-		questions.Add (new Question ("You write the following code: \nint n = 5;\n 'int *ptrToN = &n'\nptrToN is of type ? ", 
+		questions.Add (new Question ("You write the following code: \nint n = 5;\n int *ptrToN = &n;\nptrToN is of type ? ", 
 			"pointer to int", "int", "Std::string",  "char *",  "0")); 
-		questions.Add (new Question ("You write the following code: \nint n = 5; \nint *ptrToN = &n\nWhat is the value of *ptrToN after the code finishes executing ? ",
+		questions.Add (new Question ("You write the following code: \nint n = 5; \nint *ptrToN = &n;\nWhat is the value of *ptrToN after the code finishes executing ? ",
 			"5", "hexadecimal address of n", "binary address of 5", "address of 5",  "0"));
-		questions.Add (new Question ("You write the following code: \nint n = 5; \nint *ptrToN = n\nWhat is the value of ptrToN after the code finishes executing ? ",
+		questions.Add (new Question ("You write the following code: \nint n = 5; \nint *ptrToN = n;\nWhat is the value of ptrToN after the code finishes executing ? ",
 			"5", "hexadecimal address of n", "binary address of 5", "address of 5", "1")); 
 		questions.Add (new Question ("In the following code, baz = *foo \n'*' is called the ",
 			"dot operator",  "star operator", "dereference operator", "Asterisk operator", "2")); 
