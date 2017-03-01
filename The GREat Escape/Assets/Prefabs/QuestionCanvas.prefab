@@ -216,8 +216,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010028306706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 135, y: -38, z: 0}
-  m_LocalScale: {x: 532.01263, y: 490.44342, z: 41.62632}
+  m_LocalPosition: {x: 135, y: -43, z: 0}
+  m_LocalScale: {x: 532.01263, y: 500.34308, z: 41.62632}
   m_Children: []
   m_Father: {fileID: 224000011677686330}
   m_RootOrder: 3
@@ -246,7 +246,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "ptr2 = new int[5];\nfor(int i = 0; i<5; i++)\n\t{*ptr1[i] = *ptr2[i]}"
 --- !u!114 &114000010145359790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,7 +279,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: '&ptr2 = ptr1'
 --- !u!114 &114000010227224034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,8 +320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247a64f16c51a4d569d1898249e68c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  chosen: 0
+  Name: 3
+  chosen: 3
   correct_answer: 0
   Health: {fileID: 0}
   bossHealth: {fileID: 0}
@@ -329,9 +329,28 @@ MonoBehaviour:
   clear: {fileID: 0}
   fbPanel: {fileID: 0}
   bossQ: {fileID: 0}
-  feedback: 
-  correctFB: []
-  wrongFB: []
+  feedback: Keep trying!
+  correctFB:
+  - Way to go!
+  - You rock at this!
+  - "Lookin\u2019 good!"
+  - "Wow! I\u2019m impressed!"
+  - Keep at it!
+  - Good going!
+  - You were born a winner!
+  - Victory is yours!
+  - That was awesome!
+  - Great Job!
+  - Knew you could do it
+  - Great Job!
+  - "You\u2019re so good at this!"
+  - That answer was perfect!
+  wrongFB:
+  - Keep going!
+  - Keep trying!
+  - You can do it... Try again!
+  - You WILL succeed!
+  - You are so close to success!
 --- !u!114 &114000010643218132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -460,7 +479,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -468,7 +487,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: ptr2 = ptr1
 --- !u!114 &114000011078914490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,8 +652,27 @@ MonoBehaviour:
   fbPanel: {fileID: 0}
   bossQ: {fileID: 0}
   feedback: 
-  correctFB: []
-  wrongFB: []
+  correctFB:
+  - Way to go!
+  - You rock at this!
+  - "Lookin\u2019 good!"
+  - "Wow! I\u2019m impressed!"
+  - Keep at it!
+  - Good going!
+  - You were born a winner!
+  - Victory is yours!
+  - That was awesome!
+  - Great Job!
+  - Knew you could do it
+  - Great Job!
+  - "You\u2019re so good at this!"
+  - That answer was perfect!
+  wrongFB:
+  - Keep going!
+  - Keep trying!
+  - You can do it... Try again!
+  - You WILL succeed!
+  - You are so close to success!
 --- !u!114 &114000012738426720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -667,7 +705,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Blah
+  m_Text: "Given the following declarations:\n\tint * ptr1;\n\tint * ptr2;\n\tptr1
+    = new int[5];\n\twhat statement will produce a shallow copy ? "
 --- !u!114 &114000012891307358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -695,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247a64f16c51a4d569d1898249e68c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
+  Name: 0
   chosen: 0
   correct_answer: 0
   Health: {fileID: 0}
@@ -704,9 +743,28 @@ MonoBehaviour:
   clear: {fileID: 0}
   fbPanel: {fileID: 0}
   bossQ: {fileID: 0}
-  feedback: 
-  correctFB: []
-  wrongFB: []
+  feedback: "Lookin\u2019 good!"
+  correctFB:
+  - Way to go!
+  - You rock at this!
+  - "Lookin\u2019 good!"
+  - "Wow! I\u2019m impressed!"
+  - Keep at it!
+  - Good going!
+  - You were born a winner!
+  - Victory is yours!
+  - That was awesome!
+  - Great Job!
+  - Knew you could do it
+  - Great Job!
+  - "You\u2019re so good at this!"
+  - That answer was perfect!
+  wrongFB:
+  - Keep going!
+  - Keep trying!
+  - You can do it... Try again!
+  - You WILL succeed!
+  - You are so close to success!
 --- !u!114 &114000013617396336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -742,7 +800,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -750,7 +808,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "ptr2 = new int[5];\nfor(int i = 0; i<5; i++)\n\t{ptr2[i] = ptr1[i]};"
 --- !u!114 &114000013737304868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -843,8 +901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247a64f16c51a4d569d1898249e68c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  chosen: 0
+  Name: 1
+  chosen: 1
   correct_answer: 0
   Health: {fileID: 0}
   bossHealth: {fileID: 0}
@@ -852,9 +910,28 @@ MonoBehaviour:
   clear: {fileID: 0}
   fbPanel: {fileID: 0}
   bossQ: {fileID: 0}
-  feedback: 
-  correctFB: []
-  wrongFB: []
+  feedback: Keep going!
+  correctFB:
+  - Way to go!
+  - You rock at this!
+  - "Lookin\u2019 good!"
+  - "Wow! I\u2019m impressed!"
+  - Keep at it!
+  - Good going!
+  - You were born a winner!
+  - Victory is yours!
+  - That was awesome!
+  - Great Job!
+  - Knew you could do it
+  - Great Job!
+  - "You\u2019re so good at this!"
+  - That answer was perfect!
+  wrongFB:
+  - Keep going!
+  - Keep trying!
+  - You can do it... Try again!
+  - You WILL succeed!
+  - You are so close to success!
 --- !u!212 &212000012218432896
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -978,8 +1055,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139, y: 85}
-  m_SizeDelta: {x: 487, y: 202}
+  m_AnchoredPosition: {x: 140, y: 80}
+  m_SizeDelta: {x: 484, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000010286957186
 RectTransform:
@@ -997,7 +1074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.25, y: -113.5}
+  m_AnchoredPosition: {x: 134.25, y: -106}
   m_SizeDelta: {x: 496.5, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000010960980206
@@ -1016,8 +1093,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.25, y: -167.5}
-  m_SizeDelta: {x: 496.5, y: 54}
+  m_AnchoredPosition: {x: 134.25, y: -171.5}
+  m_SizeDelta: {x: 496, y: 77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011173617938
 RectTransform:
@@ -1052,8 +1129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 9}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 6}
+  m_SizeDelta: {x: 0, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011677686330
 RectTransform:
@@ -1095,9 +1172,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.25, y: -225}
-  m_SizeDelta: {x: 496.5, y: 61}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 134.5, y: -245}
+  m_SizeDelta: {x: 496, y: 70}
+  m_Pivot: {x: 0.5, y: 0.50000024}
 --- !u!224 &224000012611903478
 RectTransform:
   m_ObjectHideFlags: 1
@@ -1131,9 +1208,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 9}
+  m_AnchoredPosition: {x: 0.00000081016, y: -0.000002861023}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.3256558}
 --- !u!224 &224000014161732484
 RectTransform:
   m_ObjectHideFlags: 1
@@ -1150,7 +1227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.25003, y: -59.499992}
+  m_AnchoredPosition: {x: 134.25, y: -52}
   m_SizeDelta: {x: 496.5, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &225000010665592224
@@ -1160,7 +1237,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012753960700}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 1
