@@ -49,11 +49,10 @@ public class ButtonPushed : MonoBehaviour {
 		};
 
 		wrongFB = new string[] {
-			"Keep going!",
-			"Keep trying!", 
-			"You can do it... Try again!", 
-			"You WILL succeed!", 
-			"You are so close to success!"
+			"That was terrible",
+			"Better luck next time!", 
+			"You really went with that answer?", 
+			"FAIL"
 		};
 
 	}
