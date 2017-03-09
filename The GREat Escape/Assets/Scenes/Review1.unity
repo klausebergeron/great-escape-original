@@ -986,7 +986,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fact Review !
+  m_Text: Fact Review!
 --- !u!222 &1931993348
 CanvasRenderer:
   m_ObjectHideFlags: 0

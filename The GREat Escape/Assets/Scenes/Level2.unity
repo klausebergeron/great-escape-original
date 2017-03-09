@@ -119,11 +119,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words: []
+  facts: []
   reviewWords: []
   reviewIndices: 
   numBooks: 0
   maxBooks: 4
   numBooksCollected: {fileID: 277699520}
+  currentBook: 0
 --- !u!4 &41138381
 Transform:
   m_ObjectHideFlags: 0
@@ -446,7 +448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: 240}
+  m_AnchoredPosition: {x: -337, y: 281}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &269789142
@@ -1421,6 +1423,7 @@ MonoBehaviour:
   qCanvas: {fileID: 0}
   panel: {fileID: 0}
   answer: 0
+  index: 0
 --- !u!1001 &627395695
 Prefab:
   m_ObjectHideFlags: 0
