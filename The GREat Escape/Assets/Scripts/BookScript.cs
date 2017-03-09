@@ -43,18 +43,18 @@ public class BookScript : MonoBehaviour {
 		levelCount = 1;
 
 		facts = new string[] {
-			"Fact1 ", 
-			"Fact2",
-			"Fact3", 
-			"Fact4", 
-			"Fact5", 
-			"Fact6", 
-			"Fact7", 
+			"Pointers should be prepended by a 'p' in most cases and you should place the * close to variable name, not pointer type.", 
+			"Pointers are used to dynamically allocate memory space.",
+			"& represents the address-of operator", 
+			"* is called the dereference operator.", 
+			"All pointers in a program are likely going to occupy the same amount of space in memory (the size in memory of a pointer depends on the platform where the program runs).", 
+			"Note that the asterisk (*) used when declaring a pointer only means that it is a pointer and should not be confused with the dereference operator which is also written with an asterisk (*).", 
+			"It is common to write pointer definitions with the asterisk closer to the variable name than to the type.", 
 			"Fact8", 
 			"Fact9", 
 			"Fact10", 
 			"Fact11", 
-			"Fact12", 
+			"* is the dereference operator, and can be read as 'value pointed to by'", 
 			"Fact13", 
 			"Fact14", 
 			"Fact15", 
@@ -62,7 +62,7 @@ public class BookScript : MonoBehaviour {
 			"Fact17", 
 			"Fact18", 
 			"Fact19", 
-			"Fact20"
+			"Pointers are used to dynamically allocate memory space. This memory space must be freed once you are done using it to avoid memory leaks."
 
 		};
 						
