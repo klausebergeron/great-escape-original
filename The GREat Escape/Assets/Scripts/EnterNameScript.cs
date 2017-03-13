@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class EnterNameScript : MonoBehaviour {
 	public Text NameInputFieldText;
     public Text RequiredText;
+    public int ver;
 
 	// Use this for initialization
 	void Start () {
+        ver = -1;
 	
 	}
 	
@@ -29,6 +31,8 @@ public class EnterNameScript : MonoBehaviour {
         }
 
         PlayerPrefs.SetString("CurrentPlayer", Name);
+        ver = Version.getVersion();
+        Debug.Log("version = " + ver);
         SceneManager.LoadScene("Level1");
     }
 

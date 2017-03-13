@@ -68,14 +68,34 @@ public class BossQuestions : MonoBehaviour {
 		questions = new List<Question>();
 		questions.Add (new Question ("Choose the correct statement to define a 1d array of pointers to double with 10 elements. ",
 			"*double ptrarr[10]", "double *[10] ptrarr", "double int *ptrarr[10]", "double *prtarr[10]", "3"));
-		questions.Add (new Question ("What problem/error will likely result from the following code? int *p;\nfor (int i=0; i < 5; i++)\n\tp = new int[10];",
-			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "1"));
-		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
-			"free(ptrarr)", "delete ptrarr", "delete *ptrarr", " ~ *ptrarr", "1"));
 		questions.Add (new Question ("Which of the following are pointer variables in the following definition?\n\tString *pName, name, address ",
 			"pName, name, and address", "Name", "pName", "Name", "2"));
-		questions.Add (new Question ("What symbol represents the address-of operator ? ",
+		questions.Add (new Question ("What problem/error will likely result from the following code? int *p;\nfor (int i=0; i < 5; i++)\n\tp = new int[10];",
+			"Dangling pointer", "Memory leak", "Type mismatch", "Segmentation fault", "1"));
+		questions.Add (new Question ("Missing 5th question for level 1",
+			"free(ptrarr)", "delete ptrarr", "delete *ptrarr", " ~ *ptrarr", "1"));   //end of level 1 questions
+		questions.Add (new Question ("What symbol represents the address-of operator? ",
 			"&", "*", "->", "None of the above", "0"));
+		questions.Add (new Question ("Which symbol represents the indirection operator? ",
+			"*", ".", "->", "&", "0"));
+		questions.Add (new Question ("What would the following print?\nint num = 77;\nint *ptr = &num;\ncout << *ptr;",
+			"Memory address of num", "Memory address of ptr", "77", "8566", "2"));
+		questions.Add (new Question ("Name an issue with the following code: \nint *ptr;\ncout << ptr;",
+			"ptr var has not been initialized", "ptr is should be a pointer to double", "Cannot print variables", "There are no issues.", "0"));
+		questions.Add (new Question ("You want make changes to a variable in a function. How would you pass the variable?",
+			"Pass-by-value", "Pass-by-Reference", "Pass-by-const", "It is impossible.", "1"));  //end of level 2 questions
+		questions.Add (new Question ("You declare an array, arr, of size 10. How would you access the value at the 4th index?",
+			"arr[10]", "*(arr+4)", "It is impossible to access the value at the 4th position.", "*arr", "1")); 
+		questions.Add (new Question ("Missing Question 2 of level 3",
+			"free(ptrarr)", "delete ptrarr", "delete *ptrarr", " ~ *ptrarr", "1"));
+		questions.Add (new Question ("Missing Question 3 of level 3",
+			"free(ptrarr)", "delete ptrarr", "delete *ptrarr", " ~ *ptrarr", "1"));
+		questions.Add (new Question ("Missing Question 4 of level 3",
+			"free(ptrarr)", "delete ptrarr", "delete *ptrarr", " ~ *ptrarr", "1"));
+		questions.Add (new Question ("Missing Question 5 of level 3",
+			"free(ptrarr)", "delete ptrarr", "delete *ptrarr", " ~ *ptrarr", "1"));  //end of level 3 questions
+		questions.Add (new Question ("Choose the correct statement to free a 1d array of pointers, ptrarr to double with 10 elements.",
+			"free(ptrarr)", "delete ptrarr", "delete *ptrarr", " ~ *ptrarr", "1"));
 		questions.Add (new Question ("You write the following code:int n = 5; \nint *ptrToN = &n;\nWhat is the name of the operator in this fragment &n ?",
 			"The and operator", "Pointer", "int pointer operator ", "address-of operator", "3"));		
 		questions.Add (new Question ("You write the following code: \nint n = 5;\n int *ptrToN = &n;\nptrToN is of type ? ", 
@@ -86,8 +106,7 @@ public class BossQuestions : MonoBehaviour {
 			"5", "hexadecimal address of n", "binary address of 5", "address of 5", "1")); 
 		questions.Add (new Question ("In the following code, baz = *foo \n'*' is called the ",
 			"dot operator",  "star operator", "dereference operator", "Asterisk operator", "2")); 
-		questions.Add (new Question ("Which symbol represents the dereference operator ? ",
-			"*", ".", "->", "&", "0"));
+		
 		questions.Add (new Question ("* is the _________ operator, and can be read as 'value pointed to by' ? ",
 			"dereference", "value at start", "reference to malloc", "address-of", "0")); 
 		questions.Add (new Question ("Choose the correct statement to declare a pointer that points to another pointer ? ",

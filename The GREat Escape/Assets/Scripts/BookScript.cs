@@ -43,27 +43,24 @@ public class BookScript : MonoBehaviour {
 		levelCount = 1;
 
 		facts = new string[] {
-			"Pointers should be prepended by a 'p' in most cases and you should place the * close to variable name, not pointer type.", 
-			"Pointers are used to dynamically allocate memory space.",
-			"& represents the address-of operator", 
+			"A pointer variable stores a memory address.", 
+			"Pointers must be declared before they can be used, just like a normal variable. The syntax of declaring a pointer is to place a * in front of the name. A pointer is associated with a type too. For example, int *ptr;",
+			"All pointers in a program are likely going to occupy the same amount of space in memory (the size in memory of a pointer depends on the platform where the program runs).", 
 			"* is called the dereference operator.", 
 			"All pointers in a program are likely going to occupy the same amount of space in memory (the size in memory of a pointer depends on the platform where the program runs).", 
-			"Note that the asterisk (*) used when declaring a pointer only means that it is a pointer and should not be confused with the dereference operator which is also written with an asterisk (*).", 
-			"It is common to write pointer definitions with the asterisk closer to the variable name than to the type.", 
-			"Fact8", 
-			"Fact9", 
-			"Fact10", 
-			"Fact11", 
-			"* is the dereference operator, and can be read as 'value pointed to by'", 
-			"Fact13", 
-			"Fact14", 
-			"Fact15", 
-			"Fact16", 
-			"Fact17", 
-			"Fact18", 
-			"Fact19", 
-			"Pointers are used to dynamically allocate memory space. This memory space must be freed once you are done using it to avoid memory leaks."
-
+			"The delete[] operator 	deallocates the memory block pointed to by ptr (if not null), releasing the storage space previously allocated to it by a call to operator new[] and rendering that pointer location invalid. For example, delete ptr1;", 
+			"Memory leaks occur when new memory is allocated dynamically and never deallocated.", 
+			"A dangling pointer is a pointer whose value is the address of memory that the program no longer owns).", //end of  level1 facts
+			"The & is an operator that returns the memory address of its operand. For example, if var is an integer variable, then &var is its address.", 
+			"When you declare a pointer variable, its content is not initialized. You need to initialize a pointer by assigning it a valid address. This is normally done via the address-of operator (&). For example, if pNumber is an int pointer, *pNumber returns the int value "pointed to" by pNumber. For example,\nint number = 88;\nint * pNumber;\npNumber = &number;", 
+			"The indirection operator is *. This operator returns the value stored in the address kept in the pointer variable. For example, the following would print “99”:\nint *pNumber = 99;\ncout << *pNumber << endl;", 
+			"In C/C++, by default, arguments are passed into functions by value (except arrays). That is, a clone copy of the argument is made and passed into the function. Changes to the clone copy inside the function do not affect the original argument.'", 
+			"You may wish to modify the original copy directly. Do this by passing a pointer of the object into the function, known as pass-by-reference. For example,\nint number = 8;\nsquare(&number);\n…}\nvoid square(int * pNumber){", 
+			"In C/C++, an array's name is a pointer, pointing to the first element (index 0) of the array. For example, suppose that numbers is an int array, numbers is a also an int pointer, pointing at the first element of the array. That is, numbers is the same as &numbers[0]. Consequently, *numbers is number[0]; *(numbers+i) is numbers[i].", 
+			"The keyword const can be used on pointer parameters, like we do with references. It is used for a similar situation -- it allows parameter passing without copying anything but an address, but protects against changing the data (for functions that should not change the original). For example, \nconst double * v\nThis establishes v as a pointer to an object that cannot be changed through the pointer v.", 
+			"Fact3 of Level 3", 
+			"Fact4 of Level 3", 
+			"Fact5 of Level 3"
 		};
 						
 		reviewIndices = new List<int>();
