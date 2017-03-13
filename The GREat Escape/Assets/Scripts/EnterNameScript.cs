@@ -4,7 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EnterNameScript : MonoBehaviour {
-	public Text NameInputFieldText;
+	/*
+    public Text NameInputFieldText;
     public Text RequiredText;
     public int ver;
 
@@ -40,4 +41,5 @@ public class EnterNameScript : MonoBehaviour {
     {
         SceneManager.LoadScene("TitleScreen");
     }
+    */
 }
